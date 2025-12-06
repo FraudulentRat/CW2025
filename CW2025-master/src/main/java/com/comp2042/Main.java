@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -21,6 +22,9 @@ public class Main extends Application {
         GuiController c = fxmlLoader.getController();
 
         primaryStage.setTitle("TetrisJFX");
+        String iconPath = getClass().getClassLoader().getResource("tetrix.jpg").toExternalForm();
+        primaryStage.getIcons().add(new Image(iconPath));
+
         Scene scene = new Scene(root, 300, 510);
         primaryStage.setScene(scene);
         primaryStage.show();
