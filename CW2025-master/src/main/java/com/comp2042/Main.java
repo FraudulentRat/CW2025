@@ -15,11 +15,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        URL location = getClass().getClassLoader().getResource("gameLayout.fxml");
+        URL location = getClass().getClassLoader().getResource("mainMenu.fxml");
         ResourceBundle resources = null;
         FXMLLoader fxmlLoader = new FXMLLoader(location, resources);
         Parent root = fxmlLoader.load();
-        GuiController c = fxmlLoader.getController();
+        
+        MenuController menuController = fxmlLoader.getController();
+        menuController.setStage(primaryStage);
 
         primaryStage.setTitle("TetrisJFX");
         String iconPath = getClass().getClassLoader().getResource("tetrix.jpg").toExternalForm();
@@ -28,7 +30,6 @@ public class Main extends Application {
         Scene scene = new Scene(root, 300, 510);
         primaryStage.setScene(scene);
         primaryStage.show();
-        new GameController(c);
     }
 
 
