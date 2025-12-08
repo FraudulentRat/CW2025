@@ -24,7 +24,7 @@ public class Main extends Application {
         MenuController menuController = fxmlLoader.getController();
         menuController.setStage(primaryStage);
 
-        primaryStage.setTitle("TetrisJFX");
+        primaryStage.setTitle("TetrisGame By Choong Yi He");
         String iconPath = getClass().getClassLoader().getResource("tetrix.jpg").toExternalForm();
         primaryStage.getIcons().add(new Image(iconPath));
 

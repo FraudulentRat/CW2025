@@ -9,7 +9,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomBrickGenerator implements BrickGenerator {
 
     private final List<Brick> brickList;
-
     private final Deque<Brick> nextBricks = new ArrayDeque<>();
 
     public RandomBrickGenerator() {
@@ -21,15 +20,20 @@ public class RandomBrickGenerator implements BrickGenerator {
         brickList.add(new SBrick());
         brickList.add(new TBrick());
         brickList.add(new ZBrick());
-        nextBricks.add(brickList.get(ThreadLocalRandom.current().nextInt(brickList.size())));
-        nextBricks.add(brickList.get(ThreadLocalRandom.current().nextInt(brickList.size())));
+        nextBricks.add(getBrick()); 
+        nextBricks.add(getBrick());
+    }
+
+    private Brick getRandomBaseBrick() {
+        int index = ThreadLocalRandom.current().nextInt(brickList.size());
+        return brickList.get(index);
     }
 
     @Override
     public Brick getBrick() {
-        if (nextBricks.size() <= 1) {
-            nextBricks.add(brickList.get(ThreadLocalRandom.current().nextInt(brickList.size())));
-        }
+        if (nextBricks.size() <= 1) { 
+            nextBricks.add(new BrickColor(getRandomBaseBrick())); 
+        } 
         return nextBricks.poll();
     }
 
