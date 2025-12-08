@@ -40,19 +40,28 @@ public class GameController implements InputEventListener {
 
     @Override
     public ViewData onLeftEvent(MoveEvent event) {
-        board.moveBrickLeft();
+        boolean move = board.moveBrickLeft();
+        if (move && event.getEventSource() == EventSource.USER) {
+            ManageSound.playMove();
+        }
         return board.getViewData();
     }
 
     @Override
     public ViewData onRightEvent(MoveEvent event) {
-        board.moveBrickRight();
+        boolean move = board.moveBrickRight();
+        if (move && event.getEventSource() == EventSource.USER) {
+            ManageSound.playMove();
+        }
         return board.getViewData();
     }
 
     @Override
     public ViewData onRotateEvent(MoveEvent event) {
-        board.rotateLeftBrick();
+        boolean rotate = board.rotateLeftBrick();
+        if (rotate && event.getEventSource() == EventSource.USER) {
+            ManageSound.playMove();
+        }
         return board.getViewData();
     }
 
