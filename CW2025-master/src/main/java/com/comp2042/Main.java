@@ -15,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        BGM.playMusic();
+        BGM.playMenuMusic();
         URL location = getClass().getClassLoader().getResource("mainMenu.fxml");
         ResourceBundle resources = null;
         FXMLLoader fxmlLoader = new FXMLLoader(location, resources);

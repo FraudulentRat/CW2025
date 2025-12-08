@@ -24,7 +24,9 @@ public class MenuController {
             Scene Gamescene = new Scene(root, 1000, 750);
             primaryStage.setScene(Gamescene);
             primaryStage.show();
+
             new GameController(c);
+            BGM.playGameMusic();
         } catch (Exception e) {
             e.printStackTrace();
         }
