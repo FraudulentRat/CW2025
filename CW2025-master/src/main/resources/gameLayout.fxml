@@ -6,13 +6,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 <?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <Pane fx:controller="com.comp2042.GuiController"
       xmlns:fx="http://javafx.com/fxml">
     <GridPane fx:id="brickPanel" vgap="1" hgap="1"/>
-    <BorderPane styleClass="gameBoard" fx:id="gameBoard">
+    <BorderPane styleClass="gameBoard" fx:id="gameBoard" layoutX="40" layoutY="30" prefWidth="400" prefHeight="600">
         <center>
-            <GridPane fx:id="gamePanel" hgap="1" vgap="1" layoutY="30" layoutX="40"/>
+            <GridPane fx:id="gamePanel" hgap="1" vgap="1" />
         </center>
+
+        <right>
+            <VBox fx:id="scorePanel" spacing="20" alignment="TOP_CENTER" styleClass="scorePanel" prefWidth="150">
+                <padding>
+                    <Insets top="20" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="SCORE" styleClass="scoreLabel"/>
+                <Label fx:id="scoreLabel" text="0" styleClass="scoreValue"/>
+            </VBox>
+        </right>
     </BorderPane>
 
     <Group fx:id="groupNotification" layoutX="14" layoutY="203">

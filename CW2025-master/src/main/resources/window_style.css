@@ -70,3 +70,23 @@
     -fx-fill: yellow;
     -fx-text-fill: yellow;
 }
+
+.scorePanel {
+    -fx-background-color: linear-gradient(to bottom, #222, #444);
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-padding: 10;
+}
+
+.scoreLabel {
+    -fx-font-family: "Let's go Digital";
+    -fx-font-size: 24px;
+    -fx-text-fill: yellow;
+}
+
+.scoreValue {
+    -fx-font-family: "Let's go Digital";
+    -fx-font-size: 36px;
+    -fx-text-fill: yellow;
+}
