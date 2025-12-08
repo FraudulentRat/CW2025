@@ -27,7 +27,7 @@ public class Main extends Application {
         String iconPath = getClass().getClassLoader().getResource("tetrix.jpg").toExternalForm();
         primaryStage.getIcons().add(new Image(iconPath));
 
-        Scene scene = new Scene(root, 300, 510);
+        Scene scene = new Scene(root, 1000, 750);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

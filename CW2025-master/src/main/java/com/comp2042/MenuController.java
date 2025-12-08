@@ -21,7 +21,7 @@ public class MenuController {
             Parent root = fxmlLoader.load();
             GuiController c = fxmlLoader.getController();
 
-            Scene Gamescene = new Scene(root, 300, 510);
+            Scene Gamescene = new Scene(root, 1000, 750);
             primaryStage.setScene(Gamescene);
             primaryStage.show();
             new GameController(c);
