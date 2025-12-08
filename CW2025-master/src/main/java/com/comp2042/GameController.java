@@ -33,11 +33,7 @@ public class GameController implements InputEventListener {
 
             viewGuiController.refreshGameBackground(board.getBoardMatrix());
 
-        } else {
-            if (event.getEventSource() == EventSource.USER) {
-                board.getScore().add(1);
-            }
-        }
+        } 
         return new DownData(clearRow, board.getViewData());
     }
 
