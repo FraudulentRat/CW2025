@@ -1,0 +1,24 @@
+.root {
+    -fx-background-image: url("main_menu_bg.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+.title-text {
+    -fx-font-size: 80px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 12, 0.4, 0, 0);
+}
+
+.big-button {
+    -fx-font-size: 32px;
+    -fx-padding: 15px 40px;
+    -fx-background-color: #333;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+}
+.big-button:hover {
+    -fx-background-color: #555;
+}
